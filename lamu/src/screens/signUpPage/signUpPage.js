@@ -1,7 +1,8 @@
 import React, {useState} from "react"
-import UnprotectedPage from "../components/unprotectedPage"
+import UnprotectedPage from "../../components/unprotectedPage"
 import axios from "axios"
 import {useHistory} from "react-router-dom"
+import {SignUpCard, Input, Text,Form ,LoginButton, SignUpButton } from "./signUpStyle"
 
 const SignUpPage = () =>{
     UnprotectedPage()
@@ -31,7 +32,7 @@ const SignUpPage = () =>{
             "nickname": nickname
         }
         
-         axios.post(`https://backend-fullstack-labenu.herokuapp.com/user/signup`,body).then((response)=>{
+         axios.post(`http://localhost:3003/users/signup`,body).then((response)=>{
              console.log(response)
          })
     }
@@ -41,14 +42,16 @@ const SignUpPage = () =>{
     }
 
     return(
-        <div>
-            <label>Nome </label> <input value={name} onChange={onChangeName}/> <br/>
-            <label>Email</label> <input value={email} onChange={onChangeEmail}/> <br/>
-            <label>Senha </label> <input value={password} onChange={onChangepassword}/> <br/>
-            <label>Apelido </label> <input value={nickname} onChange={onChangeNickname}/><br/>
-            <button onClick={signUp}>cadastrar</button>
-            <button onClick={goToLogin}>ir para login</button>
-        </div>
+        <SignUpCard>
+            <Form>
+            <Text>Nome </Text> <Input placeholder={"Digite seu nome"} value={name} onChange={onChangeName}/> <br/>
+            <Text>Email</Text> <Input placeholder={"Digite seu Email"} value={email} onChange={onChangeEmail}/> <br/>
+            <Text>Senha </Text> <Input placeholder={"Digite sua senha"} value={password} onChange={onChangepassword}/> <br/>
+            <Text>Apelido </Text> <Input placeholder={"Digite seu apelido"} value={nickname} onChange={onChangeNickname}/><br/>
+            <SignUpButton onClick={signUp}>cadastrar</SignUpButton><br/>
+            <p>Já tem uma conta?<LoginButton onClick={goToLogin}>Clique aqui</LoginButton></p>
+            </Form>
+        </SignUpCard>
     )
 }
 
