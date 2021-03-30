@@ -1,9 +1,9 @@
 import React from "react"
 import {Route,BrowserRouter,Switch} from "react-router-dom"
-import SignUpPage from "../screens/signUpPage"
-import LoginPage from "../screens/loginPage"
-import FeedPage from "../screens/feedPage"
-import CreatePostPage from "../screens/createPostPage"
+import SignUpPage from "../screens/signUpPage/signUpPage"
+import LoginPage from "../screens/loginPage/loginPage"
+import FeedPage from "../screens/feedPage/feedPage"
+import PostDetailsPage from "../screens/postDetailsPage/postDetailsPage"
 
 
 const Router =()=>{
@@ -16,6 +16,10 @@ const Router =()=>{
             <LoginPage/>
            </Route>
 
+           <Route exact path="/postdetails/:id">
+            <PostDetailsPage/>
+           </Route>
+
            <Route exact path="/signup">
             <SignUpPage/>
            </Route>
@@ -23,10 +27,6 @@ const Router =()=>{
            
            <Route exact path="/feed">
             <FeedPage/>
-           </Route>
-
-           <Route exact path="/createpost">
-            <CreatePostPage/>
            </Route>
 
         </Switch>
