@@ -28,12 +28,15 @@ const LoginPage = () =>{
             })
     }
     
-    
+    const goTocreateAccount=()=>{
+        history.push("/signup")
+    }
     return(
         <div>
             <label>Email</label> <input value={email} onChange={onChangeEmail}/> <br/>
             <label>Senha </label> <input value={password} onChange={onChangepassword}/> <br/>
-            <button onClick={login}>cadastrar</button>
+            <button onClick={login}>login</button>
+            <button onClick={goTocreateAccount}>criar conta</button>
         </div>
     )
 }

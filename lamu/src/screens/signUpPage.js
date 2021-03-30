@@ -1,9 +1,11 @@
 import React, {useState} from "react"
 import UnprotectedPage from "../components/unprotectedPage"
 import axios from "axios"
+import {useHistory} from "react-router-dom"
 
 const SignUpPage = () =>{
     UnprotectedPage()
+    const history = useHistory()
     const [name,setName] = useState("")
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
@@ -34,6 +36,10 @@ const SignUpPage = () =>{
          })
     }
 
+    const goToLogin =()=>{
+        history.push("/")
+    }
+
     return(
         <div>
             <label>Nome </label> <input value={name} onChange={onChangeName}/> <br/>
@@ -41,6 +47,7 @@ const SignUpPage = () =>{
             <label>Senha </label> <input value={password} onChange={onChangepassword}/> <br/>
             <label>Apelido </label> <input value={nickname} onChange={onChangeNickname}/><br/>
             <button onClick={signUp}>cadastrar</button>
+            <button onClick={goToLogin}>ir para login</button>
         </div>
     )
 }
