@@ -3,7 +3,6 @@ import {Route,BrowserRouter,Switch} from "react-router-dom"
 import SignUpPage from "../screens/signUpPage/signUpPage"
 import LoginPage from "../screens/loginPage/loginPage"
 import FeedPage from "../screens/feedPage/feedPage"
-import CreatePostPage from "../screens/createPostPage/createPostPage"
 import PostDetailsPage from "../screens/postDetailsPage/postDetailsPage"
 
 
@@ -28,10 +27,6 @@ const Router =()=>{
            
            <Route exact path="/feed">
             <FeedPage/>
-           </Route>
-
-           <Route exact path="/createpost">
-            <CreatePostPage/>
            </Route>
 
         </Switch>

@@ -43,3 +43,32 @@ border-radius:20px;
 margin-left:320px;
 margin-top:10px;
 `
+export const CollectionInput = styled.input`
+width:308px;
+border-radius:20px;
+margin: 5px 5px 5px 0;
+`
+export const ImageFormInput = styled.input`
+width:135px;
+margin: 5px 5px 5px 0;
+border-radius:20px;
+`
+export const SubmitButton = styled.button`
+background-color:#09316f;
+color:white;
+border-radius:20px;
+width:92px;
+height:25px;
+cursor: pointer;
+margin: 5px 5px 5px 0;
+`
+
+export const Form = styled.form`
+display:flex;
+justify-content:center;
+`
+export const Select = styled.select`
+height:25px;
+margin: 5px 5px 5px 0;
+border-radius:20px;
+`
